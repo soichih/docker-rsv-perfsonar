@@ -13,7 +13,7 @@ RUN yum -y install --enablerepo=osg-development rsv-perfsonar
 RUN /sbin/chkconfig condor-cron on
 
 #Listen on 8080
-COPY httpd.conf /etc/httpdconf/httpd.conf
+COPY httpd.conf /etc/httpd/conf/httpd.conf
 EXPOSE 8080
 
 CMD \
