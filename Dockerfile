@@ -21,8 +21,8 @@ CMD \
     service condor-cron start && \
     service rsv start && \
     sleep 5 && \
-    rsv-control --enable org.osg.local.network-monitoring-local --host esmond && \
-    rsv-control --on org.osg.local.network-monitoring-local --host esmond && \
+    rsv-control --enable org.osg.local.network-monitoring-local --host localhost && \
+    rsv-control --on org.osg.local.network-monitoring-local --host localhost && \
     rsv-control --off gratia-consumer && \
     sleep 2 && \
     tail -f /var/log/condor-cron/* /var/log/rsv/metrics/* /var/log/httpd/*
