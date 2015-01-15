@@ -23,7 +23,9 @@ CMD \
     sleep 5 && \
     rsv-control --enable org.osg.local.network-monitoring-local --host localhost && \
     rsv-control --on org.osg.local.network-monitoring-local --host localhost && \
-    rsv-control --off gratia-consumer && \
-    sleep 2 && \
-    tail -f /var/log/condor-cron/* /var/log/rsv/metrics/* /var/log/httpd/*
+    rsv-control --off gratia-consumer
+
+# at runtime, mount these volumes on the host to monitor logs
+#    sleep 2 && \
+#    tail -f /var/log/condor-cron/* /var/log/rsv/metrics/* /var/log/httpd/*
 
