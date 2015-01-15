@@ -19,11 +19,11 @@ EXPOSE 8080
 CMD \
     service condor-cron start && \
     service rsv start && \
-    sleep 5 && \
+    sleep 3 && \
     rsv-control --enable org.osg.local.network-monitoring-local --host localhost && \
     rsv-control --on org.osg.local.network-monitoring-local --host localhost && \
     rsv-control --off gratia-consumer && \
-    /usr/sbin/httpd -DFOREGROUND
+    scl enable python27 "/usr/sbin/httpd -D FOREGROUND"
 
 # at runtime, mount these volumes on the host to monitor logs
 #    sleep 2 && \
